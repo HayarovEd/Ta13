@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Ta13</string>
+    <string name="name">ПОЗИКА ОНЛАЙН</string>
+    <string name="amount">Сума</string>
+    <string name="bet">Ставка</string>
+    <string name="days">Термін</string>
+    <string name="age">Вік</string>
+    <string name="go_to">Отримати позику</string>
 </resources>

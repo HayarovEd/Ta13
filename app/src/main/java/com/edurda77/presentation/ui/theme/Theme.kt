@@ -1,4 +1,4 @@
-package com.edurda77.ui.theme
+package com.edurda77.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
