@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,12 +18,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
@@ -83,7 +86,8 @@ fun ItemLoan(
                         topEnd = 20.dp,
                         bottomStart = 20.dp
                     )
-                ),
+                )
+                .padding(5.dp),
             model = loan.imageUrl,
             contentScale = ContentScale.FillWidth,
             contentDescription = ""
@@ -101,7 +105,7 @@ fun ItemLoan(
             )
             Spacer(modifier = modifier.width(15.dp))
             ItemData(
-                modifier.weight(1.3f),
+                modifier.weight(1f),
                 name = stringResource(id = R.string.bet),
                 content = loan.percent
             )
@@ -119,7 +123,7 @@ fun ItemLoan(
             )
             Spacer(modifier = modifier.width(15.dp))
             ItemData(
-                modifier.weight(1.3f),
+                modifier.weight(1f),
                 name = stringResource(id = R.string.age),
                 content = loan.age
             )
@@ -128,11 +132,16 @@ fun ItemLoan(
         Button(
             modifier = modifier
                 .fillMaxWidth()
+                .clip(shape = RoundedCornerShape(35.dp))
                 .background(
                     Brush.horizontalGradient(
                         colors = colors
                     )
                 ),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.Transparent
+            ),
+            contentPadding = PaddingValues(vertical = 22.dp),
             onClick = { openLink.launch(intent) }) {
             Text(
                 text = stringResource(id = R.string.go_to),
@@ -156,18 +165,19 @@ fun ItemData(
 ) {
     Box(
         modifier = modifier
-            .fillMaxWidth()
+            //.fillMaxWidth()
     ) {
         Column(
             modifier = modifier
                 .padding(start = 4.dp)
+                .fillMaxWidth()
                 .clip(
                     shape = RoundedCornerShape(
                         10.dp
                     )
                 )
                 .background(color = BackgroundCard)
-                .padding(vertical = 8.dp, horizontal = 20.dp)
+                .padding(vertical = 8.dp, horizontal = 10.dp)
         ) {
             Text(
                 text = name,
