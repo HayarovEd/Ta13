@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "appdenga.onlinerubnakartu"
+    namespace = "appdenga.onlinerubnakartus"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "appdenga.onlinerubnakartu"
+        applicationId = "appdenga.onlinerubnakartus"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
